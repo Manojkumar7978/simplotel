@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background: linear-gradient(to right, #ff6cbf, #ffdc5b);
     color: #333;
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
@@ -71,6 +71,7 @@ i {
     background: linear-gradient(to right, #ff6cbf, #ffdc5b);
     max-width: 1200px;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 .display {
@@ -143,6 +144,12 @@ i {
     padding: 1rem;
     border-radius: 0 50px 0 50px;
     font-family: Arial, Helvetica, sans-serif;
+    animation: fadeIn 1s ease-in-out;
+    cursor: pointer;
+}
+.card:hover{
+    transform: scale(1.1);
+
 }
 
 .card h4 {
@@ -172,7 +179,6 @@ img {
     width: 100%;
     height: auto;
     border-radius: 0 50px 0 0;
-
 }
 
 .order-btn {
@@ -185,19 +191,49 @@ img {
     background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
+#buttom-nav{
+    height: 50px;
+    width: 100vw;
+    max-width: 1200px;
+    background: linear-gradient(to top, #525151, #0a0a0a);
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, #bbff00, #ff0077) 1;
+    border-radius: 5px;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#buttom-nav i:hover{
+transform: scale(1.5);
+}
+
 
 @media screen and (max-width: 550px) {
     .nav-icon {
         display: none;
     }
+    .nav-container{
+        display: none;
+    }
+    #buttom-nav{
+        display: flex;
+    }
 
     .header {
         width: auto;
     }
-
 }
 
 @media screen and (max-width: 350px) {
+    .header{
+        left: 0;
+    }
     .header h1 {
         font-size: 22px;
         margin: 1rem 0;
@@ -206,4 +242,15 @@ img {
     .order-item h1 {
         font-size: 30px;
     }
+
 }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
